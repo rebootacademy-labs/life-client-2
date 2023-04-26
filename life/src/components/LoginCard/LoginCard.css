@@ -1,0 +1,16 @@
+.card {
+    max-width: 500px;
+}
+
+.emailLoginInput{
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.title{
+    text-align: center;
+}

@@ -1,0 +1,12 @@
+.card {
+    max-width: 500px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titulo {
+    text-align: center;
+}
