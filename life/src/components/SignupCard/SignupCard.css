@@ -1,12 +1,21 @@
-.card {
+.card-form {
     max-width: 500px;
 }
 
-.buttons {
+.buttons-register {
     display: flex;
     justify-content: flex-end;
 }
 
 .titulo {
     text-align: center;
+}
+
+.card-success {
+    background-color: rgba(255, 255, 255, 0.178);
+}
+
+.button-back {
+    display: flex;
+    justify-content:center;
 }

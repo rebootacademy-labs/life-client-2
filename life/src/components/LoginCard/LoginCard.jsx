@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
+import { login } from '../../services/auth'
 
 import "./LoginCard.css"
 
@@ -37,10 +38,11 @@ function LoginCard({ changeToSignup }) {
     }
     try {
       const apiResponse = await login(dataInLogin)
+      console.log(apiResponse)
       localStorage.setItem('token', apiResponse.data.token)
       navigate('/home')
     } catch (error) {
-      setErrorMessage(error.response.data)
+      setErrorMessage(error.response.data.error)
       setTimeout(() => {
         setErrorMessage('')
       }, 3000)
@@ -48,8 +50,8 @@ function LoginCard({ changeToSignup }) {
   }
 
   return (
-    <Card className='card'>
-      <CardHeader className='title' title="Login"></CardHeader>
+    <Card className='card-style'>
+      <CardHeader className='title' title="Acceder"></CardHeader>
       <CardContent>
         <TextField
           sx={{ marginBottom: '20px' }}
@@ -64,22 +66,21 @@ function LoginCard({ changeToSignup }) {
             if (e.key === 'Enter') return onLogin()
           }}
           onChange={(e) => updatePassword(e.target.value)}
-          label="Password"
+          label="Contraseña"
           variant="outlined"
           fullWidth
-        ></TextField>
-        
-        {errorMessage && (
-          <Typography color="error" textAlign="center" mt={2}>
-            {errorMessage}
-          </Typography>
+          ></TextField>
+          {errorMessage && (
+            <Typography color="error" textAlign="center" mt={2}>
+              {errorMessage}
+            </Typography>
         )}
       </CardContent>
       <Divider />
-      <CardActions className='buttons'>
-        <Button onClick={() => changeToSignup()}>Register</Button>
+      <CardActions className='buttons-action'>
+        <Button onClick={() => changeToSignup()}>Registrar</Button>
         <Button onClick={() => onLogin()} color="success">
-          Login
+          Acceder
         </Button>
       </CardActions>
     </Card>
