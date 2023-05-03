@@ -1,0 +1,12 @@
+.cardCategory{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    margin: 20px;
+    align-items: center;
+}
+
+.cardImage{
+    width: 150px;
+    height: 150px;
+}

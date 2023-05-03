@@ -8,7 +8,7 @@
 .menuContent {
     display: flex;
     justify-content: space-between;
-    width: 400px;
+    width: 600px;
 }
 
 button {
@@ -26,4 +26,21 @@ button {
 
 .buy-profile{
     display: flex;
+    align-items: center;
+}
+
+.buyMenu{
+    display: flex;
+    align-items: center;
+}
+
+.profileMenu{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.footer-text{
+    color: white;
 }
