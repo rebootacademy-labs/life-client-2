@@ -4,9 +4,20 @@
     width: 180px;
     margin: 20px;
     align-items: center;
+    border: 1px solid black;
+    transition: transform 0.3s ease;
+
 }
 
 .cardImage{
     width: 150px;
     height: 150px;
 }
+
+  .card-leave {
+    transform: scale(1);
+  }
+
+  .cardText{
+    color: black;
+  }

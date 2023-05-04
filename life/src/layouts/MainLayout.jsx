@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 import { Link, useNavigate } from "react-router-dom";
 import "./MainLayout.css";
@@ -110,12 +111,15 @@ function MainLayout() {
         </Toolbar>
       </AppBar>
 
+      <Outlet/>
+
       <Box
         sx={{
           backgroundColor: "black",
           height: "50px",
-          position: "sticky",
+          position: "fixed",
           bottom: 0,
+          width: "100vw"
         }}
       >
         <Box

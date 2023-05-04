@@ -1,20 +1,24 @@
-import React from "react";
+import { useState } from "react";
 
 import { Card, CardHeader, CardMedia } from "@mui/material";
 
 import "./CategoryCard.css";
 
 function CategoryCard({ title, image }) {
+
+  const [hoverClass, setHoverClass] = useState('')
+
   return (
     <Card
       className="cardCategory"
-      sx={{ height: "200px", boxShadow: "0 5px 12px black" }}
+      sx={{ height: "200px" }}
     >
       <CardMedia
       className="cardImage"
-        image={image}
+      image={image}
       ></CardMedia>
-      <CardHeader sx={{ textAlign: "center" }} title={title}></CardHeader>
+      <CardHeader className="cardText" sx={{ textAlign: "center", textDecoration:"none" }} title={title}></CardHeader>
+      
     </Card>
   );
 }

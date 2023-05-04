@@ -1,12 +1,17 @@
 import authApi from "./authAPIConfig";
 
-export async function getCategories(data) {
-  const response = await authApi.get('/categories/', data)
+export async function getCategories() {
+  const response = await authApi.get('/categories/')
   return response
 }
 
-export async function getProducts(data) {
-  const response = await authApi.get('/products/', data)
+export async function getProducts() {
+  const response = await authApi.get('/products/')
+  return response
+}
+
+export async function getProductsbyCategory(categoryId) {
+  const response = await authApi.get(`/products/category/${categoryId}`)
   return response
 }
 
