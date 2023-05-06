@@ -4,6 +4,7 @@ import { getProducts, getProductsbyCategory } from "../../services/lifeAPI";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import prueba from "../../assets/Categories/batiente.jpg"
+
 function Products() {
     const [products, setProducts] = useState([]);
     const {categoryId} = useParams()
@@ -15,7 +16,6 @@ function Products() {
       }
       refreshProducts();
     }, []);
-    console.log(products)
 
     function getCardProducts() {
         const cards = products.map((product)=>{
@@ -28,6 +28,7 @@ function Products() {
                 description={product.description}
                 accesories={product.accesories}
                 urlMoreInfo={product.urlMoreInfo}
+                price={product.price}
                 />
             )
         })
@@ -35,7 +36,7 @@ function Products() {
     }
   return (
 <Box>
-    <Box>{getCardProducts()}</Box>
+    <Box sx={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>{getCardProducts()}</Box>
 </Box>
   )
 }

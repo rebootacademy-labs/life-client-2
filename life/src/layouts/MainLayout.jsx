@@ -74,14 +74,6 @@ function MainLayout() {
             <Box>
               <Link to={"/home"}>
                 <Button sx={{ color: "black", fontWeight: "bold" }}>
-                  Home
-                </Button>
-              </Link>
-            </Box>
-
-            <Box>
-              <Link to={"/home"}>
-                <Button sx={{ color: "black", fontWeight: "bold" }}>
                   Contacto
                 </Button>
               </Link>
@@ -90,7 +82,7 @@ function MainLayout() {
 
           <Box className="buy-profile">
             <Box>
-              <Link to={"/home"} className="buyMenu">
+              <Link to={"/shopping-cart"} className="buyMenu">
                 <ShoppingCartIcon sx={{ color: "black" }} />
                 <Button sx={{ color: "black", fontWeight: "bold" }}>
                   Cesta

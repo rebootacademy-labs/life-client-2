@@ -6,3 +6,7 @@
 .category-card-container:hover {
     cursor: pointer;
   }
+
+  .noUnderline {
+    text-decoration: none;
+  }

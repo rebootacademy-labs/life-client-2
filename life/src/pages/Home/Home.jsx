@@ -32,7 +32,7 @@ function Home() {
       const imageUrl = images[category.urlImage];
 
       return (
-        <Link to={`/category/${category.id}`}>
+        <Link className="noUnderline" to={`/category/${category.id}`}>
           <CategoryCard
             className="category-card-container"
             key={category.id}

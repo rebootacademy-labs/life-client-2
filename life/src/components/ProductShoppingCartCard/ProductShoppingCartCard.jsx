@@ -6,13 +6,12 @@ import {
   CardMedia,
   Typography,
   Box,
-  Button,
 } from "@mui/material";
 
-import "./ProductCard.css";
+import "./ProductShoppingCartCard.css";
 import ProductQuantity from "../ProductQuantity/ProductQuantity";
 
-function ProductCard({
+function ProductShoppingCartCard({
   title,
   image,
   description,
@@ -22,7 +21,7 @@ function ProductCard({
 }) {
   const [quantity, setQuantity] = useState(1);
   const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems)
+
   function quantityUpdate(newQuantity) {
     setQuantity(newQuantity);
   }
@@ -38,7 +37,6 @@ function ProductCard({
       totalPrice: quantity * price,
     };
     setCartItems([...cartItems, item]);
-
   }
 
   return (
@@ -91,22 +89,10 @@ function ProductCard({
         >
           {price} €
         </Typography>
-        <ProductQuantity valor={quantity} actualizarValor={quantityUpdate} />
-        <Button
-          sx={{
-            backgroundColor: "green",
-            "&:hover": {
-              backgroundColor: "#005000",
-            },
-          }}
-          variant="contained"
-          onClick={handleBuyClick}
-        >
-          Comprar
-        </Button>
+        <ProductQuantity valor={quantity} setQuantity={quantityUpdate} />
       </Box>
     </Card>
   );
 }
 
-export default ProductCard;
+export default ProductShoppingCartCard;
