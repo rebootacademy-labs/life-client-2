@@ -1,29 +1,14 @@
 import React from "react";
 import ShoppingCartCard from "../../components/ShoppingCartCard/ShoppingCartCard";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/ShoppingCartContext";
 
-function ShoppingCart({ cartItems }) {
-    console.log(cartItems)
+function ShoppingCart() {
+const {cart} = useContext(CartContext)
+
   return (
-    <ShoppingCartCard></ShoppingCartCard>
-    // <>
-    //   {cartItems.length === 0 || cartItems.length === undefined ? (
-    //     <p>No hay productos en el carrito</p>
-    //   ) : (
-    //     <>
-    //       {cartItems.map((item, index) => (
-    //         <ShoppingCartCard
-    //           key={index}
-    //           title={item.title}
-    //           image={item.image}
-    //           description={item.description}
-    //           price={item.price}
-    //           quantity={item.quantity}
-    //           totalPrice={item.totalPrice}
-    //         />
-    //       ))}
-    //     </>
-    //   )}
-    // </>
+    // <ShoppingCartCard></ShoppingCartCard>
+    <p>{JSON.stringify(cart)}</p>
   );
 }
 

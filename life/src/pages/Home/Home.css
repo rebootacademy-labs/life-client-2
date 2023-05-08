@@ -10,3 +10,8 @@
   .noUnderline {
     text-decoration: none;
   }
+
+  .product-container{
+    flex-wrap: wrap;
+    justify-content: center;
+  }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ShoppingCartCard.css";
 import ProductShoppingCartCard from "../ProductShoppingCartCard/ProductShoppingCartCard";
 import {
@@ -9,8 +9,12 @@ import {
   Box,
   Button,
 } from "@mui/material";
+import { CartContext } from "../../contexts/ShoppingCartContext";
 
 function ShoppingCartCard() {
+
+const [cart, setCart] = useContext(CartContext)
+
   return (
     <Box sx={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
       <Box>

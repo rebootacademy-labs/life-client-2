@@ -24,7 +24,7 @@ function Products() {
                 <ProductCard
                 key={product.id}
                 title={product.name}
-                image={prueba}
+                image={product.urlImage}
                 description={product.description}
                 accesories={product.accesories}
                 urlMoreInfo={product.urlMoreInfo}

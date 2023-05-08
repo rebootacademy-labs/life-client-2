@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -11,6 +11,7 @@ import {
 
 import "./ProductCard.css";
 import ProductQuantity from "../ProductQuantity/ProductQuantity";
+import { CartContext } from "../../contexts/ShoppingCartContext";
 
 function ProductCard({
   title,
@@ -21,8 +22,9 @@ function ProductCard({
   price,
 }) {
   const [quantity, setQuantity] = useState(1);
-  const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems)
+
+  const {addToCart} = useContext(CartContext)
+
   function quantityUpdate(newQuantity) {
     setQuantity(newQuantity);
   }
@@ -37,12 +39,11 @@ function ProductCard({
       quantity,
       totalPrice: quantity * price,
     };
-    setCartItems([...cartItems, item]);
-
+    addToCart(item)
   }
 
   return (
-    <Card className="cardProduct">
+    <Card className="cardProductStyle">
       <Box className="imageContainer">
         <CardMedia className="cardImage" image={image}></CardMedia>
       </Box>
@@ -55,7 +56,7 @@ function ProductCard({
           margin: "20px",
         }}
       >
-        <CardHeader sx={{ padding: "0px"}} title={title}></CardHeader>
+        <CardHeader className="headerCard" sx={{ padding: "0px"}} title={title}></CardHeader>
         <Typography sx={{ width: "250px", fontSize: "13px" }}>
           {description}
         </Typography>

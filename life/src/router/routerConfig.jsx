@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import App from "../App";
 import Products from "../pages/Products/Products";
 import ShoppingCart from "../pages/ShoppingCart/ShoppingCart";
+import { ShoppingCartProvider } from "../contexts/ShoppingCartContext";
 
 const appRouter = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <App />,
+        element: (
+          <ShoppingCartProvider>
+            <App />
+          </ShoppingCartProvider>
+        ),
 
         children: [
           {
@@ -33,9 +38,9 @@ const appRouter = createBrowserRouter([
             element: <Products />,
           },
           {
-            path:"/shopping-cart",
-            element: <ShoppingCart/>,
-          }
+            path: "/shopping-cart",
+            element: <ShoppingCart />,
+          },
         ],
       },
     ],

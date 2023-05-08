@@ -19,8 +19,6 @@ function Home() {
     refreshCategories();
   }, []);
 
-  console.log(categories);
-
   const images = {
     batiente,
     corredera,
@@ -29,8 +27,10 @@ function Home() {
 
   function getCardCategories() {
     const cards = categories.map((category) => {
-      const imageUrl = images[category.urlImage];
+      const imageUrl = category.urlImage;
 
+      console.log(category)
+      
       return (
         <Link className="noUnderline" to={`/category/${category.id}`}>
           <CategoryCard
@@ -50,7 +50,7 @@ function Home() {
       <Box>
         <Typography>Elige la categoría del producto:</Typography>
       </Box>
-      <Box sx={{ display: "flex" }}>{getCardCategories()}</Box>
+      <Box className="product-container" sx={{ display: "flex"}}>{getCardCategories()}</Box>
     </Box>
   );
 }
