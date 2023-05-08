@@ -19,12 +19,6 @@ function Home() {
     refreshCategories();
   }, []);
 
-  const images = {
-    batiente,
-    corredera,
-    seccional,
-  };
-
   function getCardCategories() {
     const cards = categories.map((category) => {
       const imageUrl = category.urlImage;

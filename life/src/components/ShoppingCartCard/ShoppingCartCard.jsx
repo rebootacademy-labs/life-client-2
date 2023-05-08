@@ -15,6 +15,12 @@ function ShoppingCartCard() {
 
 const [cart, setCart] = useContext(CartContext)
 
+const addToCart = () => {
+  setCart((currItems)=>{
+    return [...currItems, {}]
+  })
+}
+
   return (
     <Box sx={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
       <Box>
