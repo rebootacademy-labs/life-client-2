@@ -14,8 +14,8 @@ import {
 import "./ShoppingCart.css";
 
 function ShoppingCart() {
-  const { cart } = useContext(CartContext);
-  let {totalPriceCart} = useContext(CartContext)
+  const { cart,totalPriceCart,removeFromCart } = useContext(CartContext);
+
 
   function shoppingCartProductDisplay() {
 
@@ -53,7 +53,9 @@ console.log(product)
       >
         <h1>Cesta de la compra</h1>
         <Box sx={{ display: "Flex"}}>
+          <Box>
           <Box sx={{ minWidth:"800px"}}>{shoppingCartProductDisplay()}</Box>
+          </Box>
           <Box className="price-box" sx={{ display: "Flex", flexDirection: "column", alignItems: "center", marginLeft:"20px" }}>
             <Typography sx={{fontWeight: "bold"}} >Total a pagar</Typography>
             <Typography>{totalPriceCart(cart)} €</Typography>

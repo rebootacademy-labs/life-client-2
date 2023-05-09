@@ -10,7 +10,7 @@ function addToCart (product){
     setCart((prevState)=> [...prevState, product])
 }
 
-    return <CartContext.Provider value={{cart,setCart, addToCart, totalPriceCart}}>
+    return <CartContext.Provider value={{cart,setCart, addToCart, totalPriceCart, removeFromCart}}>
         {children}
         </CartContext.Provider>
 };
@@ -21,4 +21,9 @@ function totalPriceCart(cart) {
       total += product.price;
     });
     return total;
+  }
+
+  function removeFromCart(product) {
+    const newCart = cart.filter(item => item !== product)
+    setCart(newCart)
   }
