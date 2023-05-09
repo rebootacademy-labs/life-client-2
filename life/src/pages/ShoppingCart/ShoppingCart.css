@@ -1,0 +1,19 @@
+.container-cart{
+    min-height: calc(100vh - 21vh);
+}
+
+.empty-cart{
+    text-align: center;
+}
+
+.MuiCardHeader-title{
+    font-weight: bold;
+    text-align: center;
+}
+
+.price-box{
+    border: 1px solid black;
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    height: 114px ;
+}

@@ -24,6 +24,7 @@ function ProductCard({
   const [quantity, setQuantity] = useState(1);
 
   const {addToCart} = useContext(CartContext)
+  const [addedToCart, setAddedToCart] = useState(false);
 
   function quantityUpdate(newQuantity) {
     setQuantity(newQuantity);
@@ -40,6 +41,10 @@ function ProductCard({
       totalPrice: quantity * price,
     };
     addToCart(item)
+    setAddedToCart(true);
+    setTimeout(() => {
+      setAddedToCart(false);
+    }, 3000);
   }
 
   return (
@@ -105,6 +110,7 @@ function ProductCard({
         >
           Comprar
         </Button>
+        {addedToCart &&<Typography sx={{fontSize:"10px", paddingTop:"10px", textAlign:"center", fontWeight:"bold"}}>¡Añadido a la cesta!</Typography>}
       </Box>
     </Card>
   );

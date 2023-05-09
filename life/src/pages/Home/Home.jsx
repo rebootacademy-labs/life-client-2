@@ -42,7 +42,7 @@ function Home() {
   return (
     <Box className="home-container">
       <Box>
-        <Typography>Elige la categoría del producto:</Typography>
+        <Typography sx={{textAlign:"center",fontWeight:"bold", fontSize:"30px", marginBottom:"30px" }}>¿Qué tipo de producto buscas?</Typography>
       </Box>
       <Box className="product-container" sx={{ display: "flex"}}>{getCardCategories()}</Box>
     </Box>

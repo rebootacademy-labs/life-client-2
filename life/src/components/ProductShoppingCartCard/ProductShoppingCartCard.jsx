@@ -72,13 +72,13 @@ function ProductShoppingCartCard({
           flexDirection: "column",
           alignItems: "center",
           margin: "20px",
-          justifyContent:"flex-end"
+          justifyContent: "flex-end",
         }}
       >
         <Box
           sx={{
             display: "flex",
-            marginBottom:"20px"
+            marginBottom: "20px",
           }}
         >
           <Typography
@@ -86,7 +86,7 @@ function ProductShoppingCartCard({
               fontSize: "15px",
               textAlign: "center",
               color: "black",
-              marginRight:"30px"
+              marginRight: "30px",
             }}
           >
             {quantity} ud.
@@ -97,7 +97,7 @@ function ProductShoppingCartCard({
               fontSize: "15px",
               textAlign: "center",
               color: "black",
-              marginRight:"30px"
+              marginRight: "30px",
             }}
           >
             x
@@ -115,17 +115,16 @@ function ProductShoppingCartCard({
           </Typography>
         </Box>
         <Box>
-
-        <Typography
-          sx={{
-            fontSize: "25px",
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#6a5acd",
-          }}
-        >
-          {totalPrice} €
-        </Typography>
+          <Typography
+            sx={{
+              fontSize: "25px",
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "#6a5acd",
+            }}
+          >
+            {totalPrice} €
+          </Typography>
         </Box>
       </Box>
     </Card>

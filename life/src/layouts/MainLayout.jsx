@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 import "./MainLayout.css";
 import {
   AppBar,
@@ -12,7 +13,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-
+import LogoutIcon from '@mui/icons-material/Logout';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
@@ -25,27 +26,19 @@ function MainLayout() {
 
   const navigate = useNavigate();
 
-  function openMenu(event) {
-    setAnchorEl(event.currentTarget);
-    setIsMenuOpen(true);
-  }
-
-  function closeMenu() {
-    setAnchorEl(null);
-    setIsMenuOpen(false);
-  }
-
   function onLogout() {
     localStorage.removeItem("token");
     navigate("/");
   }
+  
 
   return (
     <>
-      <AppBar elevation={0} position="sticky">
-        <Toolbar className="navContent" variant="dense">
+      <AppBar elevation={0} position="sticky" >
+        <Toolbar className="navContent" variant="dense"sx={{ display: "Flex", height:"120px"}}>
+        <Link to={"/home"}>
           <Box className="logo-life" />
-
+          </Link>
           <Box className="menuContent">
             <Box>
               <Link to={"/home"}>
@@ -91,11 +84,11 @@ function MainLayout() {
             </Box>
             <Box>
               <Link to={"/home"} className="profileMenu">
-                <PersonIcon
+                <LogoutIcon
                   sx={{ color: "black", width: "24px", height: "24px" }}
                 />
-                <Button sx={{ color: "black", fontWeight: "bold" }}>
-                  Mi cuenta
+                <Button onClick={() => onLogout()} sx={{ color: "black", fontWeight: "bold" }}>
+                  Desconectar
                 </Button>
               </Link>
             </Box>
@@ -104,32 +97,8 @@ function MainLayout() {
       </AppBar>
 
       <Outlet/>
-
-      <Box
-        sx={{
-          backgroundColor: "black",
-          height: "50px",
-          position: "fixed",
-          bottom: 0,
-          width: "100vw"
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            height: "50px",
-          }}
-        >
-          <Typography className="footer-text">
-            Política de privacidad
-          </Typography>
-          <Typography className="footer-text">Aviso legal</Typography>
-          <Typography className="footer-text">Política de cookies</Typography>
-          <Typography className="footer-text">Copyright © 2023</Typography>
-        </Box>
-      </Box>
+<Footer/>
+ 
     </>
   );
 }

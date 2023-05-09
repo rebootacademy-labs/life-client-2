@@ -4,6 +4,7 @@ import { getProducts, getProductsbyCategory } from "../../services/lifeAPI";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import prueba from "../../assets/Categories/batiente.jpg"
+import "./Products.css"
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -36,7 +37,7 @@ function Products() {
     }
   return (
 <Box>
-    <Box sx={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>{getCardProducts()}</Box>
+    <Box className="productPageContent" >{getCardProducts()}</Box>
 </Box>
   )
 }

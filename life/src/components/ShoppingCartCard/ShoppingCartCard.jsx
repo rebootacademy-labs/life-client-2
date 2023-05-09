@@ -37,7 +37,7 @@ const addToCart = () => {
           <Box>
             <CardHeader title="Cesta de la compra" sx={{ color: "black" }}>
             </CardHeader>
-            <ProductShoppingCartCard></ProductShoppingCartCard>
+            
           </Box>
         </Card>
       </Box>
