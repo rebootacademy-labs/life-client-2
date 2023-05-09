@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Card, CardHeader, CardMedia, Typography, Box } from "@mui/material";
 
 import "./ProductShoppingCartCard.css";
-import ProductQuantity from "../ProductQuantity/ProductQuantity";
 
 function ProductShoppingCartCard({
   title,
@@ -15,25 +13,12 @@ function ProductShoppingCartCard({
   totalPrice,
   quantity,
 }) {
-  // const [quantity, setQuantity] = useState(1);
   const [cartItems, setCartItems] = useState([]);
 
   function quantityUpdate(newQuantity) {
     setQuantity(newQuantity);
   }
 
-  function handleBuyClick() {
-    const item = {
-      title,
-      image,
-      description,
-      accesories,
-      price,
-      quantity,
-      totalPrice: quantity * price,
-    };
-    setCartItems([...cartItems, item]);
-  }
 
   return (
     <Card className="cardProduct">
@@ -65,20 +50,10 @@ function ProductShoppingCartCard({
         </Typography>
 
         <Typography sx={{ fontSize: "12px" }}>{accesories}</Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          margin: "20px",
-          justifyContent: "flex-end",
-        }}
-      >
         <Box
           sx={{
             display: "flex",
-            marginBottom: "20px",
+
           }}
         >
           <Typography
@@ -106,7 +81,6 @@ function ProductShoppingCartCard({
           <Typography
             sx={{
               fontSize: "15px",
-              fontWeight: "bold",
               textAlign: "center",
               color: "black",
             }}
@@ -114,13 +88,24 @@ function ProductShoppingCartCard({
             {price} €
           </Typography>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          margin: "20px",
+          justifyContent: "flex-end",
+        }}
+      >
+       
         <Box>
           <Typography
             sx={{
               fontSize: "25px",
               fontWeight: "bold",
               textAlign: "center",
-              color: "#6a5acd",
+              color: "black",
             }}
           >
             {totalPrice} €

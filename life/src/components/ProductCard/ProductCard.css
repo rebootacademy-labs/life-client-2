@@ -28,13 +28,14 @@
   }
 
   .headerCard{
-    text-align: left;
+text-align: left;
+margin-bottom: 30px;
   }
 
   .cardProductStyle:hover {
-	box-shadow: 0 10px 20px rgba(4, 249, 41, 0.598);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.598);
 }
 
 .cardProductStyle:hover {
-    transform: scale(1.02);
+    transform: scale(1.002);
 }

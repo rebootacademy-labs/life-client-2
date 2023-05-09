@@ -24,10 +24,10 @@
   }
 
   .cardCategory:hover {
-    box-shadow: 0 10px 20px rgba(194, 8, 8, 0.598);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.598);
   }
   
   .cardCategory:hover {
-      transform: scale(1.02);
+      transform: scale(1.002);
   }
   

@@ -1,33 +1,23 @@
 import React from "react";
-import ShoppingCartCard from "../../components/ShoppingCartCard/ShoppingCartCard";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/ShoppingCartContext";
 import ProductShoppingCartCard from "../../components/ProductShoppingCartCard/ProductShoppingCartCard";
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  Typography,
-  Box,
-  Button,
-} from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
 import "./ShoppingCart.css";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
+
 
 function ShoppingCart() {
-  const { cart,totalPriceCart,removeFromCart } = useContext(CartContext);
-
+  const { cart, totalPriceCart, removeFromCart } = useContext(CartContext);
 
   function shoppingCartProductDisplay() {
-
     if (cart.length === 0) {
       return <h2 className="empty-cart">Tu cesta está vacía</h2>;
-
     } else {
-
       const productCart = cart.map((product) => {
-console.log(product)
         return (
-          <>
+          <Box sx={{ display: "flex" }}>
             <ProductShoppingCartCard
               key={product.id}
               title={product.name}
@@ -39,7 +29,19 @@ console.log(product)
               quantity={product.quantity}
               totalPrice={product.totalPrice}
             ></ProductShoppingCartCard>
-          </>
+            <IconButton
+              sx={{
+                marginBottom:"20px",
+                backgroundColor: "white",
+                "&:hover": {
+                  backgroundColor: "white",
+                },
+              }}
+              onClick={() => removeFromCart(product)}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </Box>
         );
       });
       return productCart;
@@ -52,21 +54,33 @@ console.log(product)
         sx={{ display: "Flex", flexDirection: "column", alignItems: "center" }}
       >
         <h1>Cesta de la compra</h1>
-        <Box sx={{ display: "Flex"}}>
+        <Box sx={{ display: "Flex" }}>
           <Box>
-          <Box sx={{ minWidth:"800px"}}>{shoppingCartProductDisplay()}</Box>
+            <Box sx={{ minWidth: "800px" }}>{shoppingCartProductDisplay()}</Box>
           </Box>
-          <Box className="price-box" sx={{ display: "Flex", flexDirection: "column", alignItems: "center", marginLeft:"20px" }}>
-            <Typography sx={{fontWeight: "bold"}} >Total a pagar</Typography>
+          <Box
+            className="price-box"
+            sx={{
+              display: "Flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginLeft: "20px",
+            }}
+          >
+            <Typography sx={{ fontWeight: "bold" }}>Total a pagar</Typography>
             <Typography>{totalPriceCart(cart)} €</Typography>
-            <Button sx={{
-              marginTop:"20px",
-            backgroundColor: "green",
-            "&:hover": {
-              backgroundColor: "#005000",
-            },
-          }}
-          variant="contained">Pagar</Button>
+            <Button
+              sx={{
+                marginTop: "20px",
+                backgroundColor: "green",
+                "&:hover": {
+                  backgroundColor: "#005000",
+                },
+              }}
+              variant="contained"
+            >
+              Pagar
+            </Button>
           </Box>
         </Box>
       </Box>

@@ -93,7 +93,7 @@ function ProductCard({
         }}
       >
         <Typography
-          sx={{ fontSize: "25px", fontWeight: "bold", textAlign: "center", color:"#6a5acd" }}
+          sx={{ fontSize: "25px", fontWeight: "bold", textAlign: "center", color:"black" }}
         >
           {price} €
         </Typography>
