@@ -13,9 +13,9 @@ function ShoppingCart() {
 
   function getTotalPriceCart(cart) {
     let total = 0;
-    cart.map((product) => {
+    for (const product of cart) {
       total += product.price * product.quantity;
-    });
+    }
     return total;
   }
   function shoppingCartProductDisplay() {
