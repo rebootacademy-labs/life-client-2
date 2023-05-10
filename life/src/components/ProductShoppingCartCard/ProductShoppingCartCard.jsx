@@ -28,7 +28,7 @@ function ProductShoppingCartCard({
         }}
       >
         <CardHeader sx={{ padding: "0px" }} title={title}></CardHeader>
-        <Typography sx={{ width: "250px", fontSize: "13px", width:"400px" }}>
+        <Typography sx={{  fontSize: "13px", width: "400px" }}>
           {description}
         </Typography>
 
@@ -54,7 +54,7 @@ function ProductShoppingCartCard({
         <Box
           sx={{
             display: "flex",
-            marginTop:"10px"
+            marginTop: "10px",
           }}
         >
           <Typography
@@ -89,20 +89,24 @@ function ProductShoppingCartCard({
             {price} €
           </Typography>
         </Box>
-        <Box sx={{display:"flex", alignItems:"center", marginTop:"10px"}}>
-          <Typography sx={{
-              fontSize: "19px",
-              fontWeight: "bold",
-              textAlign: "left",
-              color: "black",
-            }}>Total</Typography>
+        <Box sx={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
           <Typography
             sx={{
               fontSize: "19px",
               fontWeight: "bold",
               textAlign: "left",
               color: "black",
-              marginLeft:"10px"
+            }}
+          >
+            Total
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "19px",
+              fontWeight: "bold",
+              textAlign: "left",
+              color: "black",
+              marginLeft: "10px",
             }}
           >
             {totalPrice} €
