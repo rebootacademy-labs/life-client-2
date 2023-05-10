@@ -22,6 +22,7 @@ function ProductCard({
   urlMoreInfo,
   price,
 }) {
+  const { removeFromCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
 
   const {addToCart} = useContext(CartContext)
@@ -105,6 +106,7 @@ function ProductCard({
           {price} €
         </Typography>
         <ProductQuantity valor={quantity} actualizarValor={quantityUpdate} />
+        
         <Button
           sx={{
             backgroundColor: "green",
@@ -119,6 +121,7 @@ function ProductCard({
         </Button>
         {addedToCart &&<Typography sx={{fontSize:"10px", paddingTop:"10px", textAlign:"center", fontWeight:"bold"}}>¡Añadido a la cesta!</Typography>}
       </Box>
+      
     </Card>
   );
 }

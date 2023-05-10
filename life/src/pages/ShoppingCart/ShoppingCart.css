@@ -24,3 +24,10 @@
     height: 156px ;
     justify-content: center;
 }
+
+.remove-but{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 100px;
+}

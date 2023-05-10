@@ -29,7 +29,7 @@ function ShoppingCart() {
     } else {
       const productCart = cart.map((product) => {
         return (
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", position: "relative" }}>
             <ProductShoppingCartCard
               key={product.id}
               title={product.title}
@@ -41,18 +41,17 @@ function ShoppingCart() {
               quantity={product.quantity}
               totalPrice={product.price * product.quantity}
             ></ProductShoppingCartCard>
-            <IconButton
-              sx={{
-                marginBottom: "20px",
-                backgroundColor: "white",
-                "&:hover": {
-                  backgroundColor: "white",
-                },
-              }}
-              onClick={() => removeFromCart(product)}
-            >
-              <DeleteIcon />
-            </IconButton>
+            <Box className="remove-but">
+              <IconButton
+                sx={{
+                  marginBottom: "20px",
+                }}
+                onClick={() => removeFromCart(product)}
+                color="error"
+              >
+                <DeleteIcon />
+              </IconButton>
+            </Box>
           </Box>
         );
       });
@@ -121,11 +120,17 @@ function ShoppingCart() {
                   textAlign: "right",
                 }}
               >
-                {(getTotalPriceCart(cart)*0.07).toFixed(2)} €
+                {(getTotalPriceCart(cart) * 0.07).toFixed(2)} €
               </Typography>
             </Box>
             <Box sx={{ display: "Flex" }}>
-              <Typography sx={{ marginBottom: "20px", width: "120px", fontWeight:"bold" }}>
+              <Typography
+                sx={{
+                  marginBottom: "20px",
+                  width: "120px",
+                  fontWeight: "bold",
+                }}
+              >
                 Total
               </Typography>
               <Typography
@@ -134,7 +139,7 @@ function ShoppingCart() {
                   marginLeft: "100px",
                   width: "100px",
                   textAlign: "right",
-                  fontWeight:"bold"
+                  fontWeight: "bold",
                 }}
               >
                 {getTotalPriceCart(cart) + getTotalPriceCart(cart) * 0.07} €
