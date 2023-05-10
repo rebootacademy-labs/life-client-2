@@ -12,6 +12,7 @@ import {
 import "./ProductCard.css";
 import ProductQuantity from "../ProductQuantity/ProductQuantity";
 import { CartContext } from "../../contexts/ShoppingCartContext";
+import PopupButton from "../Popup/Popup";
 
 function ProductCard({
   title,
@@ -25,6 +26,7 @@ function ProductCard({
 
   const {addToCart} = useContext(CartContext)
   const [addedToCart, setAddedToCart] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function quantityUpdate(newQuantity) {
     setQuantity(newQuantity);
@@ -45,6 +47,11 @@ function ProductCard({
     setTimeout(() => {
       setAddedToCart(false);
     }, 3000);
+    setIsOpen(true);
+  }
+
+  function handleClose() {
+    setIsOpen(false);
   }
 
   return (

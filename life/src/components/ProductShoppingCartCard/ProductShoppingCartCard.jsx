@@ -10,16 +10,9 @@ function ProductShoppingCartCard({
   accesories,
   urlMoreInfo,
   price,
-  totalPrice,
   quantity,
+  totalPrice,
 }) {
-  const [cartItems, setCartItems] = useState([]);
-
-  function quantityUpdate(newQuantity) {
-    setQuantity(newQuantity);
-  }
-
-
   return (
     <Card className="cardProduct">
       <Box className="imageContainer">
@@ -35,7 +28,7 @@ function ProductShoppingCartCard({
         }}
       >
         <CardHeader sx={{ padding: "0px" }} title={title}></CardHeader>
-        <Typography sx={{ width: "250px", fontSize: "13px" }}>
+        <Typography sx={{ width: "250px", fontSize: "13px", width:"400px" }}>
           {description}
         </Typography>
 
@@ -49,11 +42,19 @@ function ProductShoppingCartCard({
           Incluye
         </Typography>
 
-        <Typography sx={{ fontSize: "12px" }}>{accesories}</Typography>
+        <Typography
+          sx={{
+            fontSize: "12px",
+            textDecoration: "underline",
+            textShadow: "1px 1px 2px #ddd",
+          }}
+        >
+          {accesories}
+        </Typography>
         <Box
           sx={{
             display: "flex",
-
+            marginTop:"10px"
           }}
         >
           <Typography
@@ -88,24 +89,20 @@ function ProductShoppingCartCard({
             {price} €
           </Typography>
         </Box>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          margin: "20px",
-          justifyContent: "flex-end",
-        }}
-      >
-       
-        <Box>
+        <Box sx={{display:"flex", alignItems:"center", marginTop:"10px"}}>
+          <Typography sx={{
+              fontSize: "19px",
+              fontWeight: "bold",
+              textAlign: "left",
+              color: "black",
+            }}>Total</Typography>
           <Typography
             sx={{
-              fontSize: "25px",
+              fontSize: "19px",
               fontWeight: "bold",
-              textAlign: "center",
+              textAlign: "left",
               color: "black",
+              marginLeft:"10px"
             }}
           >
             {totalPrice} €

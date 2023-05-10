@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import "./MainLayout.css";
@@ -21,8 +20,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import { Box } from "@mui/system";
 
 function MainLayout() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
 
   const navigate = useNavigate();
 
@@ -57,20 +54,20 @@ function MainLayout() {
             </Box>
 
             <Box>
-              <Link to={"/home"}>
+              <Link to={"https://www.homelife.it/es/download/"}>
                 <Button sx={{ color: "black", fontWeight: "bold" }}>
                   Manuales
                 </Button>
               </Link>
             </Box>
 
-            <Box>
+            {/* <Box>
               <Link to={"/home"}>
                 <Button sx={{ color: "black", fontWeight: "bold" }}>
                   Contacto
                 </Button>
               </Link>
-            </Box>
+            </Box> */}
           </Box>
 
           <Box className="buy-profile">
@@ -82,7 +79,7 @@ function MainLayout() {
                 </Button>
               </Link>
             </Box>
-            <Box>
+            <Box sx={{marginLeft:"20px"}}>
               <Link to={"/home"} className="profileMenu">
                 <LogoutIcon
                   sx={{ color: "black", width: "24px", height: "24px" }}
@@ -95,7 +92,6 @@ function MainLayout() {
           </Box>
         </Toolbar>
       </AppBar>
-
       <Outlet/>
 <Footer/>
  

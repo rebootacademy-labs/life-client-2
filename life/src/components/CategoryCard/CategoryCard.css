@@ -6,8 +6,9 @@
     align-items: center;
     border: 1px solid black;
     transition: transform 0.3s ease;
-    padding:10px
-
+    padding:10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+    transform: scale(1.03);
 }
 
 .cardImage{
@@ -24,10 +25,10 @@
   }
 
   .cardCategory:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.598);
+    box-shadow: none
   }
   
   .cardCategory:hover {
-      transform: scale(1.002);
+      transform: scale(1);
   }
   
