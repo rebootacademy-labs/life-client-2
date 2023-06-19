@@ -4,9 +4,12 @@
 
 .buttons-register {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
+.divider{
+    padding-top: 60px;
+}
 .titulo {
     text-align: center;
 }

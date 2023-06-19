@@ -50,9 +50,9 @@ function SignupCard({ changeToLogin }) {
     const apiResponse = await signup(dataInSignup);
     const sendEmailData = {
       nombre: userName,
-      email:email
-    }
-    sendEmail(sendEmailData)
+      email: email,
+    };
+    sendEmail(sendEmailData);
     console.log(apiResponse);
     if (apiResponse.status === 200) {
       setIsRegistered(true);
@@ -71,12 +71,14 @@ function SignupCard({ changeToLogin }) {
             </Typography>
           </CardContent>
           <CardActions className="button-back">
-            <Button onClick={() => changeToLogin()}>Ir a Página de Inicio</Button>
+            <Button onClick={() => changeToLogin()}>
+              Ir a Página de Inicio
+            </Button>
           </CardActions>
         </Card>
       ) : (
         <Card className="card-form">
-          <CardHeader className="titulo" title="Registro" />
+          <CardHeader className="titulo" title="REGISTRO" />
           <CardContent>
             <TextField
               onChange={(e) => setUserName(e.target.value)}
@@ -128,11 +130,11 @@ function SignupCard({ changeToLogin }) {
               fullWidth={true}
             />
           </CardContent>
-          <Divider />
+          <Divider className="divider" />
           <CardActions className="buttons-register">
-            <Button onClick={() => changeToLogin()}>Acceder</Button>
+            <Button onClick={() => changeToLogin()}>volver atras</Button>
             <Button color="success" onClick={() => onSignup()}>
-              Registro
+              GUARDAR
             </Button>
           </CardActions>
         </Card>

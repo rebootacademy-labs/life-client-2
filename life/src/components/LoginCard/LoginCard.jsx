@@ -5,9 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../services/auth";
 
 import "./LoginCard.css";
-import insta from "../../assets/backgrounds/insta.png";
-import whatsapp from "../../assets/backgrounds/whatsapp.png";
-import libro from "../../assets/backgrounds/libro.png";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
